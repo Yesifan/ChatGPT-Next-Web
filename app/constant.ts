@@ -54,6 +54,8 @@ export const OpenaiPath = {
   ChatPath: "v1/chat/completions",
   UsagePath: "dashboard/billing/usage",
   SubsPath: "dashboard/billing/subscription",
+  threads: "v1/threads",
+  assistants: "v1/assistants",
   ListModelPath: "v1/models",
 };
 
