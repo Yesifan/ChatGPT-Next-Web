@@ -41,6 +41,7 @@ export async function requestOpenai(req: NextRequest) {
       "Content-Type": "application/json",
       "Cache-Control": "no-store",
       Authorization: authValue,
+      ...(openaiPath.includes("threads") || openaiPath.includes("assistants") ? {"OpenAI-Beta": "assistants=v1"} : {}),
       ...(process.env.OPENAI_ORG_ID && {
         "OpenAI-Organization": process.env.OPENAI_ORG_ID,
       }),
