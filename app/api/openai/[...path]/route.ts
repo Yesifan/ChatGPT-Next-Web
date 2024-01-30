@@ -32,7 +32,7 @@ async function handle(
 
   const subpath = params.path.join("/");
 
-  if (!ALLOWD_PATH.has(subpath)||subpath.startsWith("v1/threads")||subpath.startsWith("v1/assistants")) {
+  if (!ALLOWD_PATH.has(subpath)&&!subpath.startsWith("v1/threads")&&!subpath.startsWith("v1/assistants")) {
     console.log("[OpenAI Route] forbidden path ", subpath);
     return NextResponse.json(
       {
